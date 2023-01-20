@@ -1,0 +1,61 @@
+
+
+.knapp1 {
+    position: fixed;
+    transform: translate(1340px, 830px);
+}
+.knapp2 {
+    position: fixed;
+    transform: translate(1220px, 830px);
+}
+.knapp3 {
+    position: fixed;
+    transform: translate(1099px, 830px);
+}
+.knapp4 {
+    position: fixed;
+    transform: translate(700px, 830px);
+}
+.knapp5 {
+    position: fixed;
+    transform: translate(800px, 833px);
+}
+.knapp6 {
+    position: fixed;
+    transform: translate(1443px, 860px);
+}
+#skjul{
+    display:none;
+}
+
+.knapp7 {
+   
+    position: fixed;
+    transform: translate(1350px, 232px);
+}
+.styleVare {
+    position: fixed;
+    transform: translate(900px, 860px);
+
+}
+
+.button { 
+    font-style: italic;
+
+}
+body {
+    background-image: url('testLars.svg'); 
+    
+}
+.handleliste  ul li{
+    font-family: sans-serif;
+    font-size: large;
+    column-gap: 4px;
+    list-style: box;
+    position: relative;
+    transform: translate(650px, 330px);
+    margin:0.5em;
+
+}
+
+

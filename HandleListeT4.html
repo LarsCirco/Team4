@@ -1,0 +1,132 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Handleliste</title>
+    <link rel="stylesheet" href="style.css">
+
+    <br><div class ="localStorage">
+        
+            <img src="clearstorage.png" class="knapp1" onclick="localStorage.clear();">
+            <img src="save list.png" class = "knapp2" onclick="saveList()">
+            <img src="retrive list.png" class = "knapp3" onclick="retrieveList()">
+        
+    </div>
+
+    <link href='https://fonts.googleapis.com/css?family=Open+Sans' rel='stylesheet'>
+
+<style>
+    
+</style>
+
+</head>
+<body>
+    
+    <div class="handleliste" style="display:grid;">
+        <ul> 
+        </ul>
+        <input placeholder="Skriv vare, så Trykker du+++" class="styleVare" type="text" id="vare">
+        <img src="add item.png" class="knapp4" onclick="Additem(document.getElementById('vare').value)">
+        <img src="remove item.png" class="knapp5" onclick="Fjernvare()">
+        <button class="knapp6" onclick="angre()">Angre</button>
+        <img src="show.png" id="hvis" class="knapp7" onclick="HvisListe()">
+        <img src="hide.png" id="skjul" class="knapp7" onclick ="HvisListe()">
+
+</div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+ <script>
+var matteller = 0;
+
+
+function Additem(mat){
+var ul = document.querySelector('.handleliste ul');
+var li = document.createElement('li');// setter li variabel til å være lik liste element
+li.setAttribute('id', 'item' + matteller);
+var checkbox = document.createElement('input');
+checkbox.type = "checkbox";
+checkbox.className = "checkbox";
+li.appendChild(checkbox);
+li.appendChild(document.createTextNode(mat)); //setter inn text i li elemente
+document.getElementById('vare').value = ''; // tømmer input boks
+
+if (matteller < 15) {
+        ul.appendChild(li);
+        matteller++;
+    } else {
+        alert("Alert det er max 15 elementer");
+    }
+
+}
+
+// Save the list to local storage
+function saveList() {
+    var list = document.querySelector('.handleliste ul').innerHTML;
+    localStorage.setItem('list', list);
+}
+
+// Retrieve the list from local storage
+function retrieveList() {
+    var savedList = localStorage.getItem('list'); // Lagrer SavedList som en variabel som henter ut listen fra localstorage
+    if (savedList) {
+        document.querySelector('.handleliste ul').innerHTML = savedList; //
+        matteller = document.querySelectorAll('.handleliste ul li').length;
+    }
+}
+function Fjernvare(){
+    var fjernKnapp = document.querySelector('.knapp5');
+    fjernKnapp.addEventListener('click', function() {
+        var checkboxes = document.querySelectorAll('.checkbox');
+        for (var i = 0; i < checkboxes.length; i++) {
+            if (checkboxes[i].checked) {
+                var li = checkboxes[i].parentNode;
+                li.parentNode.removeChild(li);
+                matteller = document.querySelectorAll('.handleliste ul li').length;
+            }
+        }
+    });
+}
+
+
+
+function angre(){
+
+
+
+}
+function HvisListe(){
+    var list = document.querySelector('.handleliste ul'); 
+    var show = document.querySelector('#hvis');
+    var skjul = document.querySelector('#skjul');
+    if( list.style.display === "block") {
+        list.style.display="none";
+        skjul.style.display = "block";
+        show.style.display = "none";
+    }     else{
+        list.style.display="block";
+        skjul.style.display = "none";
+        show.style.display = "block";          
+    }
+}
+
+
+</script>
+
+
+
+    
+</body>
+</html>

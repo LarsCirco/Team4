@@ -1,0 +1,153 @@
+
+/*[class ^= "box-"]{
+    display: grid;
+    place-items: center;
+    border: solid 5px red;
+    
+    padding: 10px;
+    border-radius: 20px;
+    box-shadow: 0 0 5px blue;
+
+}*/
+body {
+    background-image: url("PLay Game (2).gif");
+   }
+.Container1{ 
+    width: 60vw;
+    height:95vh;
+    grid-template-columns: 50px, 50px, 50px, 50px, 50px;
+    grid-template-rows: 50px, 50px, ;
+    grid-auto-flow: row;
+    grid-auto-flow: column;
+    }
+.container2{
+    
+    display: grid;
+    grid-template-columns: 50px, 50px, 50px;
+    grid-template-rows: 50px, 50px, 50px;
+    outline:solid red
+}
+
+
+.box-1 {
+    
+    grid-column: 3;
+    font-size: 40px;
+    text-align: center;
+    
+    
+}
+.box-2 {
+    grid-column: 3;
+    font-size: 40px;
+    text-align: center;
+    align-self: center;
+  
+    
+}
+.box-3 {
+    grid-column: 3;
+    font-size: 40px;
+    align-self: center;
+    text-align: center;
+    
+    
+    
+}
+.box-4 {
+
+    font-size: 40px;
+    align-self: center;
+    border-radius: 200px;
+    text-align: center;
+    margin-top: 10px;
+    
+
+    
+    
+    
+}
+.box-5 {
+    grid-column: 1;
+    font-size: 40px;
+    align-self: center;
+    text-align: center;
+    border-radius: 200px;
+    
+    
+}
+.box-6 {
+ 
+    font-size: 40px;
+    align-self: center;
+    text-align: center;
+    border-radius: 200px;
+    
+    
+}
+.box-7 {
+    
+    font-size: 40px;
+   
+    text-align: center;
+    border-radius: 200px;
+    
+}
+.box-8 {
+    
+    font-size: 40px;
+    align-self: center;
+    text-align: center; 
+    border-radius: 200px; 
+}
+.box-4:hover{
+    background-color:rgba(190, 103, 3, 0.129);
+    border-color: blue;
+    
+    
+}
+.box-5:hover{
+    background-color:rgba(190, 103, 3, 0.129);
+    border-color: blue;
+   
+    
+}
+.box-6:hover{
+    background-color:rgba(190, 103, 3, 0.129);
+    border-color: blue;
+   
+    
+}
+.box-7:hover{
+    background-color:rgba(190, 103, 3, 0.129);
+    border-color: blue;
+    
+    
+}
+.box-8:hover{
+    background-color:rgba(190, 103, 3, 0.129);
+    border-color: blue;
+    
+    
+}
+.progress-bar {
+    height: 20px;
+    background-color: #ddd;
+    
+  }
+  
+  .vann-bar {
+    width: 0%;
+    background-color: blue;
+  }
+  
+  .sol-bar {
+    width: 0%;
+    background-color: rgb(250, 4, 4);
+  }
+  
+  .gjød-bar {
+    width: 0%;
+    background-color: rgb(0, 0, 0);
+  }
+

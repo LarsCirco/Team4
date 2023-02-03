@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>team-oppgave2</title>
+    <link rel="stylesheet" href="Style.css">
+</head>
+<body>
+    <div class="Container1"> 
+        
+        <div class="container2">
+         <div class="progress-bar vann-bar"></div>
+        <div class="box-1" id="Vann">60</div>
+        <div class="progress-bar sol-bar"></div>
+        <div class="box-2" id="Sol">60</div>
+        <div class="progress-bar gjød-bar"></div>
+        <div class="box-3" id="Gjødsel">60</div>
+        
+    </div>
+    
+
+ <button class="box-4" onclick="næring('van')">Vann</button>
+    <button class="box-5" onclick="næring('sol')">Sollys</button>
+    <button class="box-6" class="button-1" onclick="næring('gjød')">Gjødsel</button>
+    <button class="box-7" onclick="startspill()">start</button>
+    <button class="box-8" onclick="pausespill()">pause</button> </div>
+
+    <script>
+      
+        let vannDiv = document.getElementById('Vann')
+        let solDiv = document.getElementById('Sol')
+        let gjødselDiv = document.getElementById('Gjødsel')
+
+        let vann = 60;
+        let sol = 60;
+        let gjød = 60;
+        let hei;
+        let startFlag = false;
+
+        function startspill() {
+            if (startFlag)
+            {return;}
+            startFlag = true;
+            hei = setInterval(TrekkerIFraSekunder,500);
+        }
+
+            function TrekkerIFraSekunder() {
+                if(vann == 0 || sol == 0 || gjød == 0) {
+                window.location.href = 'https://www.example.com';   
+                }
+                vannDiv.innerHTML = vann-=1;
+                solDiv.innerHTML = sol-=1;
+                gjødselDiv.innerHTML = gjød-=1;
+                updateBar()}
+                
+
+        function pausespill() {
+            
+            startFlag = false;
+            clearInterval(hei)
+        }
+        function næring(næring) {
+            if(næring == 'van') {
+                vannDiv.innerHTML = vann+=1;
+            } 
+            else if(næring == 'sol') {
+                solDiv.innerHTML = sol+=1;
+            }
+            else  {
+                gjødselDiv.innerHTML = gjød+=1;
+            } 
+            
+        }
+        
+        
+        
+        
+ function updateBar() {
+  let vannTotal = 100;
+  let vannWidth = (vann / vannTotal) * 400;
+  document.querySelector(".vann-bar").style.width = vannWidth + "%";
+  
+  let solTotal = 100;
+  let solWidth = (sol / solTotal) * 400;
+  document.querySelector(".sol-bar").style.width = solWidth + "%";
+  
+  let gjødTotal = 100;
+  let gjødWidth = (gjød / gjødTotal) * 400;
+  document.querySelector(".gjød-bar").style.width = gjødWidth + "%";
+}
+
+
+    </script>
+
+
+</body>
+</html>

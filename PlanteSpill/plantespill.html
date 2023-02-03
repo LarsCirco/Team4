@@ -53,7 +53,7 @@
                 vannDiv.innerHTML = vann-=1;
                 solDiv.innerHTML = sol-=1;
                 gjødselDiv.innerHTML = gjød-=1;
-                updateBar()}
+                AnimasjonBar()}
                 
 
         function pausespill() {
@@ -70,25 +70,25 @@
             }
             else  {
                 gjødselDiv.innerHTML = gjød+=1;
-            } 
+            }
+            AnimasjonBar()
             
         }
         
         
         
         
- function updateBar() {
- let hundre = 100;
-  let vannWidth = (vann / hundre) * 400;
-  document.querySelector(".vann-bar").style.width = vannWidth + "%";
+ function AnimasjonBar() {
+    let hundre = 100;
+    let gjødWidth = (gjød / hundre) * 400;
+    let vannWidth = (vann / hundre) * 400;
+    let solWidth = (sol / hundre) * 400;
+
+    document.querySelector(".vann-bar").style.width = vannWidth + "%";
   
+    document.querySelector(".sol-bar").style.width = solWidth + "%";
   
-  let solWidth = (sol / hundre) * 400;
-  document.querySelector(".sol-bar").style.width = solWidth + "%";
-  
-  
-  let gjødWidth = (gjød / hundre) * 400;
-  document.querySelector(".gjød-bar").style.width = gjødWidth + "%";
+    document.querySelector(".gjød-bar").style.width = gjødWidth + "%";
 }
 
 

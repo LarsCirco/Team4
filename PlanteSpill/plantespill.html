@@ -78,16 +78,16 @@
         
         
  function updateBar() {
-  let vannTotal = 100;
-  let vannWidth = (vann / vannTotal) * 400;
+ let hundre = 100;
+  let vannWidth = (vann / hundre) * 400;
   document.querySelector(".vann-bar").style.width = vannWidth + "%";
   
-  let solTotal = 100;
-  let solWidth = (sol / solTotal) * 400;
+  
+  let solWidth = (sol / hundre) * 400;
   document.querySelector(".sol-bar").style.width = solWidth + "%";
   
-  let gjødTotal = 100;
-  let gjødWidth = (gjød / gjødTotal) * 400;
+  
+  let gjødWidth = (gjød / hundre) * 400;
   document.querySelector(".gjød-bar").style.width = gjødWidth + "%";
 }
 

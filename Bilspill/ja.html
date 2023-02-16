@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>car game</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+
+<body>
+    <div id="app">
+        <div class="bar"></div>
+            <div id="rounds"></div>
+            <img src="Road0.jpg" id="road">
+            <img src="sport.png" id="car" style="width:80px; position: absolute; margin-left:-330px; top: 400px;">
+            <br>
+            <br>
+            <button onclick="animasjon()">Drive</button>
+            <button onclick="stop()">Break</button>
+            <button onclick="greetM()">Hils Mario</button>
+            <button onclick="greetL()">Hils Luigi</button>
+    </div>
+
+
+    <script>
+        let roadImgs = document.getElementById('road');
+        let bilstil = document.getElementById('car');
+        let posistion = 400;
+        let rounds = 0;
+        let myImgs = [
+            'Road0.jpg',
+            'Road1.jpg',
+            'Road2.jpg',
+            'Road3.jpg',
+            'Road4.jpg',
+        ];
+        function randomPic() {
+            let randomPic = Math.floor(Math.random()* myImgs.length);
+            return myImgs[randomPic]
+        }
+
+        function kjør() {
+
+           
+        }
+
+    function animasjon(){
+        roadImgs.src = randomPic(myImgs)
+        bilstil.style.top = ( posistion -= 10) + "px";
+        if(bilstil.style.top == 200 + "px")
+        {posistion = 400 
+        rounds++
+    document.getElementById('rounds').innerHTML ="runder kjørt "+rounds;}
+    }
+    </script>
+
+</body>
+
+</html>
